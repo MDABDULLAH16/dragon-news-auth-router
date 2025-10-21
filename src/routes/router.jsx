@@ -4,6 +4,7 @@ import CategoryNews from "../pages/CategoryNews";
 import Home from "../pages/Home";
 import Login from "../components/Login/Login";
 import Register from "../components/Register/Register";
+import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter([
   {
@@ -21,12 +22,16 @@ const router = createBrowserRouter([
       },
     ],
   },
-  
+
   { path: "/login", Component: Login },
   { path: "/register", Component: Register },
   {
     path: "/auth",
-    element: <h2>Authentication Layout</h2>,
+    element: (
+      <PrivateRoute>
+        <h2>Authentication Layout</h2>
+      </PrivateRoute>
+    ),
   },
   {
     path: "/news",

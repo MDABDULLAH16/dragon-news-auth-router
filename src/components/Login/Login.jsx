@@ -1,11 +1,15 @@
 import React, { use } from "react";
 import Navbar from "../Navbar";
-import { Link } from "react-router";
+import { Link, useLocation, useNavigate } from "react-router";
 import { AuthContext } from "../../contexts/AuthContext/AuthContext";
 import { toast } from "react-toastify";
 
 const Login = () => {
-    const {loginUser}= use(AuthContext)
+    const { loginUser } = use(AuthContext)
+    const navigate = useNavigate();
+    const location = useLocation();
+    const from = location?.state?.from?.pathname || '/';
+
     const handleLogin = (e) => {
       
     e.preventDefault();
@@ -20,6 +24,7 @@ const Login = () => {
             
             if (user) {
                 toast.success('user Login successful')
+                navigate(from,{replace:true })
             } else {
                 toast.error('login error')
             }
