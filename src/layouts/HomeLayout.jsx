@@ -5,6 +5,7 @@ import LatestNews from "../components/LatestNews";
 import Navbar from "../components/Navbar";
 import LeftAside from "../components/homelayout/LeftAside";
 import RighAside from "../components/homelayout/RighAside";
+ 
 
 const HomeLayout = () => {
   return (
@@ -28,6 +29,7 @@ const HomeLayout = () => {
         <aside className="col-span-3">
           <RighAside></RighAside>
         </aside>
+       
       </main>
     </div>
   );

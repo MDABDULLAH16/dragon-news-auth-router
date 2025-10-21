@@ -5,9 +5,9 @@ const Categories = () => {
   const categories = use(categoryPromise);
 
   return (
-    <div>
-      <h2 className="font-bold">All Categories ({categories.length}) </h2>
-      <div className="grid grid-cols-1 mt-5 gap-3">
+    <div className="">
+      <h2 className="font-bold  ">All Categories ({categories.length}) </h2>
+      <div className="grid grid-cols-1 mt-5 gap-3 max-h-100 overflow-y-auto">
         {categories.map((category) => (
           <NavLink
             key={category.id}
